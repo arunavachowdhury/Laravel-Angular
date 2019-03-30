@@ -1,3 +1,5 @@
+import { AfterLoginService } from './Services/after-login.service';
+import { BeforeLoginService } from './Services/before-login.service';
 import { RequestResetComponent } from './password/request-reset/request-reset.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NgModule } from '@angular/core';
@@ -10,27 +12,32 @@ import { ResponseResetComponent } from './password/response-reset/response-reset
 const appRoutes: Routes = [
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [BeforeLoginService]
   },
   
   {
     path: 'signup',
-    component: SignupComponent
+    component: SignupComponent,
+    canActivate: [BeforeLoginService]
   },
 
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [AfterLoginService]
   },
 
   {
     path: 'request-password-reset',
-    component: RequestResetComponent
+    component: RequestResetComponent,
+    canActivate: [BeforeLoginService]
   },
 
   {
     path: 'request-password-response',
-    component: ResponseResetComponent
+    component: ResponseResetComponent,
+    canActivate: [BeforeLoginService]
   }
 ]
 
