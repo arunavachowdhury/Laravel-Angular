@@ -5,6 +5,7 @@ import { JarwisService } from './Services/jarwis.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -31,13 +32,16 @@ import { AuthService } from './Services/auth.service';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SnotifyModule
   ],
   providers: [JarwisService,
               TokenService,
               AuthService,
               AfterLoginService,
-              BeforeLoginService
+              BeforeLoginService,
+              { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
+              SnotifyService
   ],
   bootstrap: [AppComponent]
 })
