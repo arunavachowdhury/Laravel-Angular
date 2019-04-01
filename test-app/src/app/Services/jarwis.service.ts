@@ -21,4 +21,8 @@ export class JarwisService {
   sendPasswordResetLink(email){
     return this.http.post(`${this.baseUrl}/sendPasswordResetLink`, email)
   }
+
+  changePassword(data){
+    return this.http.post(`${this.baseUrl}/changePassword`, data)
+  }
 }
