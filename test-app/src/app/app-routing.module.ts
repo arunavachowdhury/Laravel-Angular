@@ -1,3 +1,4 @@
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { AfterLoginService } from './Services/after-login.service';
 import { BeforeLoginService } from './Services/before-login.service';
 import { RequestResetComponent } from './password/request-reset/request-reset.component';
@@ -38,6 +39,12 @@ const appRoutes: Routes = [
     path: 'request-password-response',
     component: ResponseResetComponent,
     canActivate: [BeforeLoginService]
+  },
+
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AfterLoginService]
   }
 ]
 

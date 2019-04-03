@@ -17,6 +17,7 @@ import { ResponseResetComponent } from './password/response-reset/response-reset
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './Services/auth.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AuthService } from './Services/auth.service';
     ProfileComponent,
     RequestResetComponent,
     ResponseResetComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
