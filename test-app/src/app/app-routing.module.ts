@@ -1,3 +1,4 @@
+import { EmployeeComponent } from './employee/employee.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AfterLoginService } from './Services/after-login.service';
 import { BeforeLoginService } from './Services/before-login.service';
@@ -44,6 +45,12 @@ const appRoutes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [AfterLoginService]
+  },
+
+  {
+    path: 'create-employee',
+    component: EmployeeComponent,
     canActivate: [AfterLoginService]
   }
 ]

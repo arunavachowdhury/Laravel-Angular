@@ -1,9 +1,11 @@
-<nav class="navbar navbar-light bg-light justify-content-between">
-  <a class="navbar-brand">Navbar</a>
-  <div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="navbar-nav mr-auto">
+    <a class="navbar-brand" routerLink="create-employee" *ngIf="loggedIn">Create Employee</a>
+  </div>
+  <div class="navbar-nav">
     <a class="navbar-brand" routerLink="login" *ngIf="!loggedIn">Login</a>
-    <a class="navbar-brand" href="#" (click)="logout($event)" *ngIf="loggedIn">Logout</a>
     <a class="navbar-brand" routerLink="signup" *ngIf="!loggedIn">Signup</a>
     <a class="navbar-brand" routerLink="profile" *ngIf="loggedIn">Profile</a>
+    <a class="navbar-brand" href="#" (click)="logout($event)" *ngIf="loggedIn">Logout</a>
   </div>
 </nav>

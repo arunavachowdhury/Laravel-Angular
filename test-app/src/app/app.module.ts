@@ -4,7 +4,7 @@ import { TokenService } from './Services/token.service';
 import { JarwisService } from './Services/jarwis.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 
 import { AppComponent } from './app.component';
@@ -18,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './Services/auth.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 @NgModule({
   declarations: [
@@ -29,9 +30,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     RequestResetComponent,
     ResponseResetComponent,
     DashboardComponent,
+    EmployeeComponent,
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
